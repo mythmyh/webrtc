@@ -1,4 +1,5 @@
 1 依赖包python:fastapi,jinja2,uvicorn,websockets
+  pip install -r requirements.txt
 
 
 2 uvicorn main:app --host=0.0.0.0 --ssl-keyfile=./server.key --ssl-certfile=./server.crt
