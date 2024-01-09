@@ -131,6 +131,8 @@ function connect() {
     document.getElementById("text").disabled = false;
     document.getElementById("send").disabled = false;
     console.log("==========>")
+    document.getElementById("login").disabled = true;
+
   };
 
   connection.onerror = function (evt) {
@@ -413,6 +415,14 @@ function handleUserlistMsg(msg) {
 
   // Add member names from the received list.
   var container = document.querySelector("#container");
+  if(msg.users.length==1){
+    if(webcamStream)
+    { 
+    webcamStream.getTracks().forEach(track => track.stop());
+  webcamStream=null;
+}
+
+  }
 
 
   msg.users.forEach(function (username) {
